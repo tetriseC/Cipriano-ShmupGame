@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: d5765e28f1ff9e74192434585a1f0b07
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - moveInput: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  - aimInput: {fileID: -8410357864530533231, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  - fireInput: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  - reloadInput: {fileID: -1031460069935676267, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  - shooter: {instanceID: 0}
+  - ammo: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

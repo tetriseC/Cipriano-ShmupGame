@@ -11,6 +11,7 @@
 - Date [YYYY/MM/DD] | Author | Comments
 - ------------------------------------------------------------
 - 2026/11/13 | David Cipriano | Created Script
+- 2026/11/14 | David Cipriano | SetMaxHealthAndRefill for enemy types
 
 ************************************************************/
 
@@ -63,6 +64,13 @@ public class Health : MonoBehaviour
         }
 
         CurrentHealth = Mathf.Min(CurrentHealth + amount, maxHealth);
+        HealthChanged?.Invoke(CurrentHealth, maxHealth);
+    }
+
+    public void SetMaxHealthAndRefill(int newMaxHealth)
+    {
+        maxHealth = newMaxHealth;
+        CurrentHealth = maxHealth;
         HealthChanged?.Invoke(CurrentHealth, maxHealth);
     }
 }
