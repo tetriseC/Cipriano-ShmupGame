@@ -21,6 +21,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed = 15f;
     [SerializeField] private float lifetime = 2f;
+    [SerializeField] private int damage = 1;
 
     private Rigidbody body;
     private IObjectPool<Projectile> pool;
@@ -47,11 +48,16 @@ public class Projectile : MonoBehaviour
 
     // Go back to the pool when touching anything this layer can hit
     private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Bullet hit " + other.name);
+{
+    Health targetHealth = other.GetComponentInParent<Health>();
 
-        ReturnToPool();
+    if (targetHealth != null)
+    {
+        targetHealth.TakeDamage(damage);
     }
+
+    ReturnToPool();
+}
 
     // ---------- Launching ----------
 

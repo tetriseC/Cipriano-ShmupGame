@@ -26,7 +26,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputActionReference moveInput;
     [SerializeField] private InputActionReference aimInput;
     [SerializeField] private InputActionReference fireInput;
+    [SerializeField] private InputActionReference reloadInput;
+
     [SerializeField] private Shooter shooter;
+    [SerializeField] private Ammo ammo;
 
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private float aimSettleSeconds = 0.05f;
@@ -49,6 +52,7 @@ public class PlayerController : MonoBehaviour
         moveInput.action.Enable();
         aimInput.action.Enable();
         fireInput.action.Enable();
+        reloadInput.action.Enable();
     }
 
     // Stop listening to input when the player turns off
@@ -57,6 +61,7 @@ public class PlayerController : MonoBehaviour
         moveInput.action.Disable();
         aimInput.action.Disable();
         fireInput.action.Disable();
+        reloadInput.action.Disable();
     }
 
     // Move every physics step
@@ -85,6 +90,14 @@ public class PlayerController : MonoBehaviour
         {
             shooter.TryShoot();
         }
+
+        // ---------- Reloading ----------
+
+        if (reloadInput.action.WasPressedThisFrame())
+        {
+            ammo.TryStartReload();
+        }
+
     }
 
     // ---------- Aiming ----------
@@ -106,6 +119,7 @@ public class PlayerController : MonoBehaviour
     {
         return IsLongEnoughToAim(heldAimDirection) && secondsAimHeld >= aimSettleSeconds;
     }
+
 
     // ---------- Direction Helpers ----------
 

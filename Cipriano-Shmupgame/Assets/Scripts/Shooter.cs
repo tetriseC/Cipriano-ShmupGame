@@ -23,6 +23,7 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField] private Projectile projectilePrefab;
     [SerializeField] private Transform muzzle;
+    [SerializeField] private Ammo ammo;
     [SerializeField] private float cooldown = 0.15f;
 
     [SerializeField] private int poolStartSize = 20;
@@ -59,7 +60,7 @@ public class Shooter : MonoBehaviour
 
     public bool TryShoot()
     {
-        if (!IsReadyToShoot())
+        if (!IsReadyToShoot() || !TrySpendAmmo())
         {
             return false;
         }
@@ -72,6 +73,11 @@ public class Shooter : MonoBehaviour
     private bool IsReadyToShoot()
     {
         return cooldownRemaining <= 0f;
+    }
+
+    private bool TrySpendAmmo()
+    {
+        return ammo == null || ammo.TrySpend(1);
     }
 
     private void SpawnProjectileAtMuzzle()
@@ -102,6 +108,9 @@ public class Shooter : MonoBehaviour
 
     private static void DestroyProjectile(Projectile projectile)
     {
+        if (projectile != null)
+        {
         Destroy(projectile.gameObject);
+        }
     }
 }
