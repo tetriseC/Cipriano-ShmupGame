@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5734768407984279901}
   - component: {fileID: 274023284374270924}
   - component: {fileID: 8041172116035844327}
-  - component: {fileID: 6656451983483553880}
   - component: {fileID: -7741498705046458242}
   - component: {fileID: -5282269801112438473}
   - component: {fileID: 8338582462904148946}
@@ -149,19 +148,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
---- !u!114 &6656451983483553880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267989876931697982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03795f5cb92f61449e14a6580d3e0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterBody
-  moveSpeed: 6
 --- !u!114 &-7741498705046458242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc520f2b4d5b9a418aaee7f68de3246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBrain
-  target: {fileID: 0}
+  target: {fileID: 4074278232170077505, guid: 3a0624e645db7ff44a983ebd017b215e, type: 3}
   shooter: {fileID: 1988897291934021784}
   bodyRenderer: {fileID: 5734768407984279901}
   aimStepDegrees: 15

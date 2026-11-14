@@ -9,6 +9,7 @@
 - Date [YYYY/MM/DD] | Author | Comments
 - ------------------------------------------------------------
 - 2026/11/14 | David Cipriano | Created Script
+- 2026/11/14 | David Cipriano | Remembers the high score for the End Scene
 
 ************************************************************/
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public static GameResult LastResult { get; private set; }
     public static int LastScore { get; private set; }
+    public static int LastHighScore { get; private set; }
 
     public float SecondsRemaining { get; private set; }
     public int Score { get; private set; }
@@ -142,5 +144,6 @@ public class GameManager : MonoBehaviour
     {
         LastResult = result;
         LastScore = Score;
+        LastHighScore = HighScore;
     }
 }
