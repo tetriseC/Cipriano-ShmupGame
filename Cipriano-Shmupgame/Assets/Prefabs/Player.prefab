@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5734768407984279901}
   - component: {fileID: 274023284374270924}
   - component: {fileID: 8041172116035844327}
-  - component: {fileID: 8314694382209281296}
+  - component: {fileID: 6656451983483553880}
+  - component: {fileID: 1622860587329406768}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -144,7 +145,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
---- !u!114 &8314694382209281296
+--- !u!114 &6656451983483553880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,14 +154,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 267989876931697982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa1b8caf1a9aaed46bb8429fe5093907, type: 3}
+  m_Script: {fileID: 11500000, guid: f03795f5cb92f61449e14a6580d3e0f4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterBody
+  moveSpeed: 6
+--- !u!114 &1622860587329406768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267989876931697982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5765e28f1ff9e74192434585a1f0b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBrain
   moveInput: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   aimInput: {fileID: -8410357864530533231, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   fireInput: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  reloadInput: {fileID: -1031460069935676267, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   shooter: {fileID: 1988897291934021784}
-  moveSpeed: 6
+  ammo: {fileID: 4954405480146517184}
   aimSettleSeconds: 0.02
 --- !u!1 &6249856300342107877
 GameObject:
@@ -175,6 +190,7 @@ GameObject:
   - component: {fileID: 6919221269142776054}
   - component: {fileID: 3696494223156755206}
   - component: {fileID: 1988897291934021784}
+  - component: {fileID: 4954405480146517184}
   m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
@@ -289,6 +305,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
   projectilePrefab: {fileID: -9104935005405180660, guid: 36104f242e560e447b5fc3e341294ab1, type: 3}
   muzzle: {fileID: 5647465962100144394}
+  ammo: {fileID: 4954405480146517184}
   cooldown: 0.15
   poolStartSize: 20
   poolMaxSize: 100
+--- !u!114 &4954405480146517184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6249856300342107877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c54af857f35e44b8d558876e669c03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ammo
+  magazineSize: 10
+  startingSpareMagazines: 2
+  maxSpareMagazines: 5
+  reloadSeconds: 1
