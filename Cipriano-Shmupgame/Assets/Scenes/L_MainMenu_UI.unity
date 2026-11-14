@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 780417617}
   - component: {fileID: 780417616}
   - component: {fileID: 780417615}
+  - component: {fileID: 780417618}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -211,6 +212,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1236480153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &780417618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780417614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &1236480151
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +617,61 @@ PrefabInstance:
     - target: {fileID: 7856756634676037532, guid: 2c00c78d13bd164489e77514c1e9579e, type: 3}
       propertyPath: m_Name
       value: UIDocument
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578240964726296632, guid: 2c00c78d13bd164489e77514c1e9579e, type: 3}
+      propertyPath: _gameLevel
+      value: L_Level01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578240964726296632, guid: 2c00c78d13bd164489e77514c1e9579e, type: 3}
+      propertyPath: _instructionTxt
+      value: 'GOAL
+
+        Survive for 2 minutes! Defeat enemies to score points.
+
+        
+
+        CONTROLS
+
+        WASD
+        - Move
+
+        Arrow Keys - Aim (press two for diagonals)
+
+        Space
+        / Left Click - Shoot
+
+        R - Reload
+
+        Esc / P - Pause
+
+        
+
+        ENEMIES
+
+        Yellow
+        Scout - fast, 1 hit, 50 points
+
+        Orange Grunt - 2 hits, 100 points
+
+        Red
+        Brute - slow, 3 hits, 200 points
+
+        
+
+        PICKUPS
+
+        Enemies
+        sometimes drop pickups when defeated.
+
+        Bright Green - restores 1
+        health
+
+        Dark Green - gives 1 spare magazine
+
+        
+
+        Hide
+        behind walls to dodge enemy fire!'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
