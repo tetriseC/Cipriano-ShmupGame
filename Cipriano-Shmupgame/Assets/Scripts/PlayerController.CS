@@ -10,6 +10,7 @@
 - ------------------------------------------------------------
 - 2026/11/13 | David Cipriano | Created Script
 - 2026/11/13 | David Cipriano | Arrow-key aiming with diagonal settle time
+- 2026/11/13 | David Cipriano | Firing through Shooter; aiming moved to Update
 
 ************************************************************/
 
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private InputActionReference moveInput;
     [SerializeField] private InputActionReference aimInput;
+    [SerializeField] private InputActionReference fireInput;
+    [SerializeField] private Shooter shooter;
 
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private float aimSettleSeconds = 0.05f;
@@ -45,6 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         moveInput.action.Enable();
         aimInput.action.Enable();
+        fireInput.action.Enable();
     }
 
     // Stop listening to input when the player turns off
@@ -52,25 +56,34 @@ public class PlayerController : MonoBehaviour
     {
         moveInput.action.Disable();
         aimInput.action.Disable();
+        fireInput.action.Disable();
     }
 
-    // Move every physics step, then turn once the aim has been held long enough
+    // Move every physics step
     private void FixedUpdate()
     {
         Vector2 movement = moveInput.action.ReadValue<Vector2>();
         body.linearVelocity = ConvertInputToFloorDirection(movement) * moveSpeed;
-
-        
     }
 
-    void Update()
+    // Aim and fire every frame so they respond instantly
+    private void Update()
     {
+        // ---------- Aiming ----------
+
         Vector2 aim = aimInput.action.ReadValue<Vector2>();
         TrackHowLongAimIsHeld(ConvertInputToFloorDirection(aim));
 
         if (HasAimBeenHeldLongEnough())
         {
-            body.rotation = Quaternion.LookRotation(heldAimDirection);
+            transform.rotation = Quaternion.LookRotation(heldAimDirection);
+        }
+
+        // ---------- Firing ----------
+
+        if (fireInput.action.IsPressed())
+        {
+            shooter.TryShoot();
         }
     }
 
@@ -80,7 +93,7 @@ public class PlayerController : MonoBehaviour
     {
         if (ArePointingSameWay(aimDirection, heldAimDirection))
         {
-            secondsAimHeld += Time.fixedDeltaTime;
+            secondsAimHeld += Time.deltaTime;
         }
         else
         {
