@@ -176,7 +176,6 @@ MonoBehaviour:
   reloadInput: {fileID: -1031460069935676267, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   shooter: {fileID: 1988897291934021784}
   ammo: {fileID: 4954405480146517184}
-  aimSettleSeconds: 0.02
 --- !u!1 &6249856300342107877
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c54af857f35e44b8d558876e669c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ammo
-  magazineSize: 10
+  magazineSize: 20
   startingSpareMagazines: 2
   maxSpareMagazines: 5
   reloadSeconds: 1
