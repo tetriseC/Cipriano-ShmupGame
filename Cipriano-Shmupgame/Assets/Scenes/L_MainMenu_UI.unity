@@ -619,59 +619,48 @@ PrefabInstance:
       value: UIDocument
       objectReference: {fileID: 0}
     - target: {fileID: 8578240964726296632, guid: 2c00c78d13bd164489e77514c1e9579e, type: 3}
+      propertyPath: _byline
+      value: 'Designed By: David Cipriano'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578240964726296632, guid: 2c00c78d13bd164489e77514c1e9579e, type: 3}
       propertyPath: _gameLevel
       value: L_Level01
       objectReference: {fileID: 0}
     - target: {fileID: 8578240964726296632, guid: 2c00c78d13bd164489e77514c1e9579e, type: 3}
+      propertyPath: _gameTitle
+      value: Cornered
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578240964726296632, guid: 2c00c78d13bd164489e77514c1e9579e, type: 3}
       propertyPath: _instructionTxt
-      value: 'GOAL
-
-        Survive for 2 minutes! Defeat enemies to score points.
+      value: 'Survive 2 minutes and score points!
 
         
 
         CONTROLS
 
         WASD
-        - Move
+        - Move    Arrows - Aim
 
-        Arrow Keys - Aim (press two for diagonals)
+        Space / Click - Shoot    R - Reload
 
-        Space
-        / Left Click - Shoot
-
-        R - Reload
-
-        Esc / P - Pause
+        Esc
+        / P - Pause
 
         
 
         ENEMIES
 
-        Yellow
-        Scout - fast, 1 hit, 50 points
-
-        Orange Grunt - 2 hits, 100 points
-
-        Red
-        Brute - slow, 3 hits, 200 points
+        Yellow - 1 hit    Orange
+        - 2 hits    Red - 3 hits
 
         
 
-        PICKUPS
+        PICKUPS (dropped by enemies)
 
-        Enemies
-        sometimes drop pickups when defeated.
+        Bright
+        Green - +1 health
 
-        Bright Green - restores 1
-        health
-
-        Dark Green - gives 1 spare magazine
-
-        
-
-        Hide
-        behind walls to dodge enemy fire!'
+        Dark Green - +1 magazine'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
